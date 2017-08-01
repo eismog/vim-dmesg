@@ -87,7 +87,7 @@ syntax match logTag '^<\d.\{-}>' contained
 syntax cluster logItem add=logTag
 highlight default link logTag Tag
 
-syntax match logTime "\[[0-9\. ]\{-}\]" contained
+syntax match logTime "\[[0-9\. ]\{12,13}\]" contained
 syntax cluster logItem add=logTime
 highlight default link logTime logLevel_5_NOTICE
 
