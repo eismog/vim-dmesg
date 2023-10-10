@@ -83,11 +83,11 @@ function! s:define_color()
     highlight   default   logLevel_0_EMERG   guifg=White   ctermfg=White   guibg=Red   ctermbg=Red
 endfunction
 
-syntax match logTag '^<\d.\{-}>' contained
+syntax match logTag '^<\d.\{-}>' contained nextgroup=logTime containedin=@logItem
 syntax cluster logItem add=logTag
 highlight default link logTag Tag
 
-syntax match logTime "\[[0-9\. ]\{12,13}\]" contained
+syntax match logTime "\[[ 0-9\.~:-]\{8,\}\]" contained containedin=@logItem
 syntax cluster logItem add=logTime
 highlight default link logTime logLevel_5_NOTICE
 
